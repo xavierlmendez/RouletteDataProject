@@ -1,6 +1,7 @@
 class RA:
     def __init__(self, name):
         self.name = name
+        self.entryTally = []
         #array designed to have 3 rows with 10 entries including zero
         #in order to match the roulette table design
         #so that complex bets are intuititivly calculable
@@ -15,6 +16,8 @@ class RA:
     def returnProb(self, entry):
         print("returnProb in class RA activated: best solution would be posted")
         print("entered entry "+ entry)
+        #add entry to tally
+        self.tally(self, entry)
         if( (entry%2) == 1):
             if(self.entryData.index(entry, 2)=='B'):
                 print("pick even red")
@@ -32,4 +35,5 @@ class RA:
         #prelimenary function whole function will be commented out and replaced with more complex calculations
     def tally(self, entry):
         print("tally in class RA has been activated: tally the entry")
+        self.entryTally.append(entry)
 
