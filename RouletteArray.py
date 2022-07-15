@@ -34,5 +34,7 @@ class RA:
         #prelimenary function whole function will be commented out and replaced with more complex calculations
     def tally(self, entry):
         print("tally in class RA has been activated: tally the entry")
-        self.entryTally.append(entry)
+        self.entryTally = self.entryTally + entry
 
+    def getTally(self):
+        print(self.entryTally)
