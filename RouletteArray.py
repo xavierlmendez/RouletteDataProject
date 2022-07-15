@@ -1,6 +1,5 @@
 class RA:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
         self.entryTally = []
         #array designed to have 3 rows with 10 entries including zero
         #in order to match the roulette table design
@@ -15,7 +14,7 @@ class RA:
     #returns the entree with best probability (for red/black even odd only)
     def returnProb(self, entry):
         print("returnProb in class RA activated: best solution would be posted")
-        print("entered entry "+ entry)
+        print("entered entry ", + entry)
         #add entry to tally
         self.tally(self, entry)
         if( (entry%2) == 1):
