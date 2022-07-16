@@ -15,7 +15,7 @@ if __name__ == '__main__':
     list = []
     with open("tally.txt") as tally:
         for line in tally:
-            list.append(line)
+            list.append(line.replace("\n",""))
     print(list)
 
 

@@ -5,11 +5,11 @@ from RouletteArray import RA
 
 class MyFirstGUI:
     entryTally = []
-    optionsNumber = ('[0]',
-                     '[1, "R"]', '[2, "B"]', '[3, "R"]', '[4, "B"]', '[5, "R"]', '[6, "B"]', '[7, "R"]', '[8, "B"]', '[9, "R"]',
-                     '[10, "B"]', '[11, "B"]', '[12, "R"]', '[13, "B"]', '[14, "R"]', '[15, "B"]', '[16, "R"]', '[17, "B"]', '[18, "R"]',
-                     '[19, "R"]', '[20, "B"]', '[21, "R"]', '[22, "B"]', '[23, "R"]', '[24, "B"]', '[25, "R"]', '[26, "B"]', '[27, "R"]',
-                     '[28, "B"]', '[29, "B"]', '[30, "R"]', '[31, "B"]', '[32, "R"]', '[33, "B"]', '[34, "R"]', '[35, "B"]', '[36, "R"]')
+    optionsNumber = ('0',
+                     '1R', '2B', '3R', '4B', '5R', '6B', '7R', '8B', '9R',
+                     '10B', '11B', '12R', '13B', '14R', '15B', '16R', '17B', '18R',
+                     '19R', '20B', '21R', '22B', '23R', '24B', '25R', '26B', '27R',
+                     '28B', '29B', '30R', '31B', '32R', '33B', '34R', '35B', '36R')
 
 
 
@@ -42,6 +42,9 @@ class MyFirstGUI:
         with open("tally.txt", 'a') as writeFile:
             writeFile.write(entry+'\n')
         writeFile.close()
+        #get the numerical representation of the draw by using its location
+        location = self.optionsNumber.index(entry)
+        print(location)
 
 
 
