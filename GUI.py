@@ -5,18 +5,19 @@ from RouletteArray import RA
 
 class MyFirstGUI:
     entryTally = []
-    optionsNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-                     "10", "11", "12", "13", "14", "15", "16", "17", "18",
-                     "19", "20", "21", "22", "23", "24", "25", "26", "27",
-                     "28", "29", "30", "31", "32", "33", "34", "35", "36"]
+    optionsNumber = [[0],
+                      [1, 'R'], [2, 'B'], [3, 'R'], [4, 'B'], [5, 'R'], [6, 'B'], [7, 'R'], [8, 'B'], [9, 'R'],
+                      [10, 'B'], [11, 'B'], [12, 'R'], [13, 'B'], [14, 'R'], [15, 'B'], [16, 'R'], [17, 'B'], [18, 'R'],
+                      [19, 'R'], [20, 'B'], [21, 'R'], [22, 'B'], [23, 'R'], [24, 'B'], [25, 'R'], [26, 'B'], [27, 'R'],
+                      [28, 'B'], [29, 'B'], [30, 'R'], [31, 'B'], [32, 'R'], [33, 'B'], [34, 'R'], [35, 'B'], [36, 'R']]
 
-    optionsColors = [" ", 'B', 'R']
-    myGame = RA
+
+
 
     def __init__(self, master):
         self.master = master
         self.clickedNum = StringVar()
-        self.clickedNum.set(0)
+        self.clickedNum.set('please select a draw')
         self.clickedColor = StringVar()
         self.clickedColor.set(0)
         master.title("Roulette Probability GUI")
@@ -27,10 +28,8 @@ class MyFirstGUI:
         self.drop_number = OptionMenu(master, self.clickedNum, *MyFirstGUI.optionsNumber)
         self.drop_number.pack()
 
-        self.drop_color = OptionMenu(master, self.clickedColor, *MyFirstGUI.optionsColors)
-        self.drop_color.pack()
 
-        self.drop_button = Button(master, text="calculate probabilities", command=self.showNum)
+        self.drop_button = Button(master, text="enter draw", command=self.showNum)
         self.drop_button.pack()
 
         self.close_button = Button(master, text="Close", command=master.quit)
@@ -38,9 +37,12 @@ class MyFirstGUI:
 
     def showNum(self):
         self.label.config(text=self.clickedNum.get())
+        entry = (self.clickedNum.get())
+        with open("tally.txt", 'a') as writeFile:
+            writeFile.write(entry+'\n')
+        writeFile.close()
 
-    def showcolor(self):
-        self.label.config(text=self.clickedColor.get())
+
 
     def greet(self):
         print("Greetings!")

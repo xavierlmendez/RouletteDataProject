@@ -4,8 +4,10 @@ from GUI import MyFirstGUI
 
 if __name__ == '__main__':
     print("main initiated")
-    myGame = RA
-    myGame.returnProb(7)
+
+    test = RA
+    test.getTally(test)
+
     root = Tk()
     my_gui = MyFirstGUI(root)
     root.mainloop()
