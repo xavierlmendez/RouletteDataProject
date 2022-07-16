@@ -38,6 +38,7 @@ class MyFirstGUI:
     def showNum(self):
         self.label.config(text=self.clickedNum.get())
         entry = (self.clickedNum.get())
+        #back up to tally.txt
         with open("tally.txt", 'a') as writeFile:
             writeFile.write(entry+'\n')
         writeFile.close()
