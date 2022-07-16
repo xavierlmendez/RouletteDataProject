@@ -12,10 +12,11 @@ class RA:
                       [28, 'B'], [29, 'B'], [30, 'R'], [31, 'B'], [32, 'R'], [33, 'B'], [34, 'R'], [35, 'B'], [36, 'R']]
 
     #returns the entree with best probability (for red/black even odd only)
-    def getTally(self):
+    def printTally(self):
         with open("tally.txt") as readFile:
             contents = readFile.readline()
         self.entryTally=contents
+        print(contents)
 
 
     def returnProb( entry):
@@ -39,9 +40,10 @@ class RA:
 
 
         #prelimenary function whole function will be commented out and replaced with more complex calculations
-    def tally(entry):
+    def getTally(entry):
         print("tally in class RA has been activated: tally the entry")
-        #self.entryTally = self.entryTally + entry
 
-    def getTally(self):
-        print(RA.entryTally)
+
+
+
+
