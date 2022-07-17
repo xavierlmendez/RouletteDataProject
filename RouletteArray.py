@@ -22,7 +22,7 @@ class RA:
         self.entryTally=contents
         print(contents)
 
-
+    #rudementary probability return: basis for complex version
     def returnProb( entry):
         print(RA.entryData)
         print("returnProb in class RA activated: best solution would be posted")
